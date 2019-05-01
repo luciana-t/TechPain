@@ -6,13 +6,76 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    <!---Melhorar posição-->
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/txv_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/inicio_titulo"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/txv_cpf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/inicio_cpf"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/txv_titulo"/>
+        <EditText
+            android:id="@+id/edt_cpf"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:layout_below="@+id/txv_cpf"/>
+
+        <LinearLayout
+            android:id="@+id/linear_buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/edt_cpf">
+            <Button
+                android:id="@+id/btn_entrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/inicio_entrar"/>
+
+            <Button
+                android:id="@+id/btn_cadastro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/inicio_cadastro"/>
+
+        </LinearLayout>
+        <!--Aparece somente se o usuário não estiver cadastrado
+                    ou o cpf for digitado errado-->
+        <TextView
+            android:id="@+id/aviso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/inicio_aviso"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="invisible"
+            android:layout_below="@+id/linear_buttons"/>
+
+    </RelativeLayout>
+
 
 </android.support.constraint.ConstraintLayout>

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TechPain</string>
+    <string name="inicio_titulo">Acessar paciente</string>
+    <string name="inicio_cpf">CPF:</string>
+    <string name="inicio_entrar">Entrar</string>
+    <string name="inicio_cadastro">Cadastrar</string>
+    <string name="inicio_aviso">Usuário não cadastrado.</string>
 </resources>

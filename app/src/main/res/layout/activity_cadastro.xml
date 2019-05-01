@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Cadastro"
+    android:gravity="center">
+    <!--Tirar o titulo "Cadastro" e colocar na barra acima-->
+    <!--Alinhar melhor as coisas no centro-->
+
+    <TextView
+        android:id="@+id/txv_titulo_cadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastro"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/txv_nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome:"
+        android:layout_below="@+id/txv_titulo_cadastro"
+        android:layout_marginTop="10dp"/>
+    <EditText
+        android:id="@+id/edt_nome"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txv_nome"/>
+    <TextView
+        android:id="@+id/txv_genero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gênero:"
+        android:layout_below="@+id/edt_nome"
+        android:layout_marginTop="10dp"/>
+    <EditText
+        android:id="@+id/edt_genero"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txv_genero"/>
+    <TextView
+        android:id="@+id/txv_dtnascimento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data de nascimento:"
+        android:layout_below="@+id/edt_genero"
+        android:layout_marginTop="10dp"/>
+    <EditText
+        android:id="@+id/edt_dtnascimento"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txv_dtnascimento"/>
+    <TextView
+        android:id="@+id/txv_telefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefone:"
+        android:layout_below="@id/edt_dtnascimento"
+        android:layout_marginTop="10dp"/>
+    <EditText
+        android:id="@+id/edt_telefone"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txv_telefone"/>
+    <Button
+        android:id="@+id/btn_cadastro_c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar"
+        android:layout_below="@+id/edt_telefone"/>
+    <Button
+        android:id="@+id/btn_voltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="voltar"
+        android:layout_below="@+id/btn_cadastro_c"/>
+
+
+</RelativeLayout>
