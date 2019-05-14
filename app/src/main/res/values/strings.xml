@@ -5,4 +5,5 @@
     <string name="inicio_entrar">Entrar</string>
     <string name="inicio_cadastro">Cadastrar</string>
     <string name="inicio_aviso">Usuário não cadastrado.</string>
+    <string name="title_activity_body1">Body1</string>
 </resources>
