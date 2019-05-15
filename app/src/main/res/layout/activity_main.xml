@@ -62,9 +62,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="@string/inicio_cadastro"/>
+                android:text="@string/inicio_cadastro"
+                android:onClick="clickButtonCad"/>
 
         </LinearLayout>
+
         <!--Aparece somente se o usuário não estiver cadastrado
                     ou o cpf for digitado errado-->
         <TextView

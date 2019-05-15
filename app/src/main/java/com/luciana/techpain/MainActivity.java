@@ -30,4 +30,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 res.append(but.getText());*/
     }
+    public void clickButtonCad(View  view){
+        Intent it = new Intent(getBaseContext(), Cadastro.class);
+        startActivity(it);
+    }
 }

@@ -1,13 +1,18 @@
 package com.luciana.techpain;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.BitmapDrawable;
 import android.view.View;
 import android.view.MotionEvent;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.ImageView;
 
 
 public class Body1 extends View {
@@ -27,6 +32,8 @@ public class Body1 extends View {
         brush.setStrokeWidth(8f);
 
         params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+
+
 
     }
 
@@ -52,6 +59,8 @@ public class Body1 extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         canvas.drawPath(path, brush);
-
+        /*Bitmap corpo = BitmapFactory.decodeResource(getResources(),R.drawable.bluefront);
+        canvas.drawBitmap(corpo, 10, 10, null);
+        */
     }
 }

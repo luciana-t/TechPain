@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BodyImage">
+    tools:context=".Body1"
+    android:id="@+id/layoutBody">
 
     <ImageView
         android:id="@+id/manfront"
@@ -12,5 +13,6 @@
         android:layout_height="wrap_content"
         android:src="@drawable/bluefront"
         android:layout_centerInParent="true"/>
+
 
 </RelativeLayout>

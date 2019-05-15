@@ -73,14 +73,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cadastrar"
-        android:layout_below="@+id/edt_telefone"/>
+        android:layout_below="@+id/edt_telefone"
+        android:onClick="clickButtonVolta"/>
     <Button
         android:id="@+id/btn_voltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="voltar"
         android:layout_toEndOf="@id/btn_cadastro_c"
-        android:layout_alignBottom="@id/btn_cadastro_c"/>
+        android:layout_alignBottom="@id/btn_cadastro_c"
+        android:onClick="clickButtonVolta"/>
 
 
 </RelativeLayout>
