@@ -13,7 +13,8 @@ import android.view.MotionEvent;
 import android.view.ViewGroup.LayoutParams;
 
 
-public class Body1 extends View {
+public class
+Body1 extends View {
 
         public LayoutParams params;
         private Path path = new Path();
@@ -55,6 +56,7 @@ public class Body1 extends View {
 
         @Override
         protected void onDraw(Canvas canvas) {
+
             canvas.drawPath(path, brush);
         }
     }
