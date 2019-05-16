@@ -1,66 +1,60 @@
 package com.luciana.techpain;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.drawable.BitmapDrawable;
+import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.View;
 import android.view.MotionEvent;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.ImageView;
 
 
 public class Body1 extends View {
 
-    public LayoutParams params;
-    private Path path = new Path();
-    private Paint brush = new Paint();
+        public LayoutParams params;
+        private Path path = new Path();
+        private Paint brush = new Paint();
 
 
-    public Body1(Context context) {
-        super(context);
+        public Body1(Context context) {
+            super(context);
 
-        brush.setAntiAlias(true);
-        brush.setColor(Color.MAGENTA);
-        brush.setStyle(Paint.Style.STROKE);
-        brush.setStrokeJoin(Paint.Join.ROUND);
-        brush.setStrokeWidth(8f);
+            brush.setAntiAlias(true);
+            brush.setColor(Color.MAGENTA);
+            brush.setStyle(Paint.Style.STROKE);
+            brush.setStrokeJoin(Paint.Join.ROUND);
+            brush.setStrokeWidth(8f);
 
-        params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-
-
-
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        float pointX = event.getX();
-        float pointY = event.getY();
-
-        switch (event.getAction()){
-            case MotionEvent.ACTION_DOWN:
-                path.moveTo(pointX, pointY);
-                return true;
-            case MotionEvent.ACTION_MOVE:
-                path.lineTo(pointX, pointY);
-                break;
-            default:
-                return false;
+            params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+            setBackground(ContextCompat.getDrawable(context, R.drawable.bluefront));
         }
-        postInvalidate();
-        return false;
-    }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
-        canvas.drawPath(path, brush);
-        /*Bitmap corpo = BitmapFactory.decodeResource(getResources(),R.drawable.bluefront);
-        canvas.drawBitmap(corpo, 10, 10, null);
-        */
+        @Override
+        public boolean onTouchEvent(MotionEvent event) {
+            float pointX = event.getX();
+            float pointY = event.getY();
+
+
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    path.moveTo(pointX, pointY);
+                    return true;
+                case MotionEvent.ACTION_MOVE:
+                    path.lineTo(pointX, pointY);
+                    break;
+                default:
+                    return false;
+            }
+            postInvalidate();
+            return false;
+        }
+
+        @Override
+        protected void onDraw(Canvas canvas) {
+            canvas.drawPath(path, brush);
+        }
     }
-}

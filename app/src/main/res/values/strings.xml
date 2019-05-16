@@ -6,4 +6,7 @@
     <string name="inicio_cadastro">Cadastrar</string>
     <string name="inicio_aviso">Usuário não cadastrado.</string>
     <string name="title_activity_body1">Body1</string>
+    <string name="desfazer">Desfazer</string>
+    <string name="salvar">Salvar</string>
+    <string name="voltar">Voltar</string>
 </resources>

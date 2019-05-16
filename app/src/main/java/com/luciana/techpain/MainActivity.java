@@ -21,14 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickButtonLog(View view){
         Intent it = new Intent(getBaseContext(),BodyImage.class);
-
         startActivity(it);
-                /*
-                if (error) {
-                    res.setText(but.getText());
-                    error = false;
-                }
-                res.append(but.getText());*/
+
     }
     public void clickButtonCad(View  view){
         Intent it = new Intent(getBaseContext(), Cadastro.class);

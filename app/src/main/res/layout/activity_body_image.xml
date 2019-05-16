@@ -4,15 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Body1"
-    android:id="@+id/layoutBody">
+    tools:context=".BodyImage"
+    android:id="@+id/layoutBody"
+    android:orientation="horizontal">
 
-    <ImageView
-        android:id="@+id/manfront"
-        android:layout_width="wrap_content"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="290dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark">
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btn_desfaz"
+        android:layout_width="95dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/bluefront"
-        android:layout_centerInParent="true"/>
+        android:text="@string/desfazer"
+        android:layout_alignParentRight="true"
+        android:onClick="onClickBtnDesfaz"/>
+
+    <Button
+        android:id="@+id/btn_salvar"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:text="@string/salvar"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btn_desfaz"
+        android:layout_marginTop="20dp"
+        android:onClick="onClickBtnSalva"/>
+
+    <Button
+        android:id="@+id/btn_voltar_imagem"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:text="@string/voltar"
+        android:layout_below="@+id/btn_salvar"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:onClick="voltar"/>
 
 
 </RelativeLayout>
