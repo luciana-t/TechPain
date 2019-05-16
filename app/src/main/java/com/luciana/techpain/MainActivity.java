@@ -10,7 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     Button btnLog, btnCad;
-    boolean error;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickButtonLog(View view){
-        Intent it = new Intent(getBaseContext(),BodyImage.class);
+        Intent it = new Intent(getBaseContext(),PerfilAdicao.class);
         startActivity(it);
 
     }

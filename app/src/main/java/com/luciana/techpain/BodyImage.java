@@ -35,7 +35,8 @@ public class BodyImage extends AppCompatActivity {
     }
 
     public void onClickBtnSalva(View view){
-
+        Intent it = new Intent(getBaseContext(), Ampere.class);
+        startActivity(it);
     }
 
     public void onClickBtnDesfaz(View view){

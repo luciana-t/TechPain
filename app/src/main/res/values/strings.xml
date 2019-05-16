@@ -9,4 +9,9 @@
     <string name="desfazer">Desfazer</string>
     <string name="salvar">Salvar</string>
     <string name="voltar">Voltar</string>
+    <string name="title_activity_perfil_adicao">PerfilAdicao</string>
+    <string name="txtconfirma">Antes de enviar as informações para o aparelho,\ninforme quantos amperes:</string>
+    <string name="a">A</string>
+    <string name="btnconfirma">Confirmar</string>
+
 </resources>
