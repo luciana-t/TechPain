@@ -1,22 +1,18 @@
 package com.luciana.techpain;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Path;
 import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.View;
 import android.view.MotionEvent;
 import android.view.ViewGroup.LayoutParams;
 
-
 public class Body1 extends View {
 
         public LayoutParams params;
-        private Path path = new Path();
+        private CustomPath path = new CustomPath();
         private Paint brush = new Paint();
 
 
