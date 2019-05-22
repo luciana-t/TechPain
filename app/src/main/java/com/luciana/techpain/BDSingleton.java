@@ -23,6 +23,7 @@ public final class BDSingleton{
     private final String[] SCRIPT_DATABASE_CREATE = new String[]{
             "CREATE TABLE Mapa ( ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, " +
                     "IdPaciente INTEGER NOT NULL, DtAdicionado INTEGER NOT NULL, " +
+                    "Amper NUMERIC NOT NULL, " +
                     " FOREIGN KEY(IdPaciente) REFERENCES Paciente(CPF));",
             "CREATE TABLE Paciente ( CPF INTEGER NOT NULL UNIQUE, Nome TEXT NOT NULL, " +
                     "Genero TEXT NOT NULL, DtNascimento NUMERIC NOT NULL, Telefone INTEGER, " +
