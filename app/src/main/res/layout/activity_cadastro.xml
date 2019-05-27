@@ -68,13 +68,26 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:layout_below="@+id/txv_telefone"/>
+    <TextView
+        android:id="@+id/txv_med"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Médico Responsável:"
+        android:layout_below="@id/edt_telefone"/>
+    <EditText
+        android:id="@+id/edt_med"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_below="@+id/txv_med"/>
     <Button
         android:id="@+id/btn_cadastro_c"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cadastrar"
-        android:layout_below="@+id/edt_telefone"
+        android:layout_below="@+id/edt_med"
         android:onClick="clickButtonVolta"/>
+
     <Button
         android:id="@+id/btn_voltar"
         android:layout_width="wrap_content"

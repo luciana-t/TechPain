@@ -23,16 +23,24 @@
         import java.util.logging.Handler;
 
 public class Ampere extends AppCompatActivity  {
+    /*
+    Utilizando um objeto Singleton:
+        Cursor c = BDSingleton.getInstance().find("tipo", new String[]{"idTipo", "nome}, "", "");
+        BDSingleton.getInstance().delete("pokemonusuario", "");
 
+    */
+    TextView bd;
     public void onClickConfirma (View view){
+
+        bd = (TextView) findViewById(R.id.bd);
+        bd.setText("");
 
         Intent it = new Intent(getBaseContext(), PerfilAdicao.class);
         startActivity(it);
         finish();
     }
 
-    private static final UUID MY_UUID_INSECURE =
-            UUID.fromString("8ce255c0-200a-11e0-ac64-0800200c9a66");
+    private static final UUID MY_UUID_INSECURE = UUID.fromString("8ce255c0-200a-11e0-ac64-0800200c9a66");
 
     private static final int REQUEST_ENABLE_BT = 1;
     BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -45,10 +53,6 @@ public class Ampere extends AppCompatActivity  {
     EditText send_data;
     TextView view_data;
     StringBuilder messages;
-
-
-
-
 
 
     public void pairDevice(View v) {

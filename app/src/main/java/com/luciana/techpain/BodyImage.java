@@ -1,6 +1,7 @@
 package com.luciana.techpain;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,10 +15,11 @@ public class BodyImage extends AppCompatActivity {
     Button btn_desfaz;
     Button btn_salvar;
     Button btn_voltar;
+    Body1 body;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Body1 body = new Body1(this);
+        body = new Body1(this);
         setContentView(R.layout.activity_body_image);
         ConstraintLayout layout = (ConstraintLayout)findViewById(R.id.container);
         layout.addView(body);
@@ -33,13 +35,19 @@ public class BodyImage extends AppCompatActivity {
         finish();
 
     }
+    /*
+        Utilizando um objeto Singleton:
+            Cursos c = BDSingleton.getInstance().find("tipo", new String[]{"idTipo", "nome"}, "", "");
+            BDSingleton.getInstance().delete("pokemonusuario", "");
 
+        */
     public void onClickBtnSalva(View view){
+
         Intent it = new Intent(getBaseContext(), Ampere.class);
         startActivity(it);
     }
 
     public void onClickBtnDesfaz(View view){
-
+        body.reset();
     }
 }

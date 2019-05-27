@@ -18,21 +18,27 @@ public class Body1 extends View {
         public LayoutParams params;
         private CustomPath path = new CustomPath();
         private Paint brush = new Paint();
-
+        public Mirror mirror;
 
         public Body1(Context context) {
             super(context);
 
             brush.setAntiAlias(true);
-            brush.setColor(Color.MAGENTA);
+            brush.setColor(Color.BLUE);
             brush.setStyle(Paint.Style.STROKE);
             brush.setStrokeJoin(Paint.Join.ROUND);
             brush.setStrokeWidth(8f);
+            mirror = new Mirror();
 
             params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
             setBackground(ContextCompat.getDrawable(context, R.drawable.bluefront));
         }
 
+
+        public void reset(){
+            mirror = new Mirror();
+            path.rewind();
+        }
         @Override
         public boolean onTouchEvent(MotionEvent event) {
             float pointX = event.getX();
@@ -57,4 +63,6 @@ public class Body1 extends View {
         protected void onDraw(Canvas canvas) {
             canvas.drawPath(path, brush);
         }
+
+        
     }

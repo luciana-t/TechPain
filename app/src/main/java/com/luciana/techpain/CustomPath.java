@@ -2,6 +2,7 @@ package com.luciana.techpain;
 
 
 import android.graphics.Path;
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -12,8 +13,8 @@ public class CustomPath extends Path implements Serializable {
 
     private static final long serialVersionUID = -5974912367682897467L;
 
-    private ArrayList<PathAction> actions = new ArrayList<CustomPath.PathAction>();
-
+//    private ArrayList<PathAction> actions = new ArrayList<CustomPath.PathAction>();
+    Mirror mirror = new Mirror();
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         in.defaultReadObject();
         drawThisPath();
@@ -21,18 +22,20 @@ public class CustomPath extends Path implements Serializable {
 
     @Override
     public void moveTo(float x, float y) {
-        actions.add(new ActionMove(x, y));
+        mirror.getActions().add(new ActionMove(x, y));
+        Log.i("CUSTOMPATH", "MOVE TO. X: " + x + " Y: " +y);
         super.moveTo(x, y);
     }
 
     @Override
     public void lineTo(float x, float y) {
-        actions.add(new ActionLine(x, y));
+        mirror.getActions().add(new ActionLine(x, y));
+        Log.i("CUSTOMPATH", "LINE TO. X: " + x + " Y: " +y);
         super.lineTo(x, y);
     }
 
     private void drawThisPath() {
-        for (PathAction p : actions) {
+        for (PathAction p : mirror.getActions()) {
             if (p.getType().equals(PathAction.PathActionType.MOVE_TO)) {
                 super.moveTo(p.getX(), p.getY());
             } else if (p.getType().equals(PathAction.PathActionType.LINE_TO)) {
