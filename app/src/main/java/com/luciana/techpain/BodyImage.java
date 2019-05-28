@@ -23,24 +23,16 @@ public class BodyImage extends AppCompatActivity {
         setContentView(R.layout.activity_body_image);
         ConstraintLayout layout = (ConstraintLayout)findViewById(R.id.container);
         layout.addView(body);
-        //AQUI MEXE NOS BOTOES
 
         btn_desfaz = (Button) findViewById(R.id.btn_desfaz);
         btn_salvar = (Button) findViewById(R.id.btn_salvar);
         btn_voltar = (Button) findViewById(R.id.btn_voltar_imagem);
-
     }
 
     public void voltar(View view){
         finish();
-
     }
-    /*
-        Utilizando um objeto Singleton:
-            Cursos c = BDSingleton.getInstance().find("tipo", new String[]{"idTipo", "nome"}, "", "");
-            BDSingleton.getInstance().delete("pokemonusuario", "");
 
-        */
     public void onClickBtnSalva(View view){
 
         Intent it = new Intent(getBaseContext(), Ampere.class);

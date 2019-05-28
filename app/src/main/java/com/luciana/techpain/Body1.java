@@ -19,6 +19,7 @@ public class Body1 extends View {
         private CustomPath path = new CustomPath();
         private Paint brush = new Paint();
         public Mirror mirror;
+        //public Canvas canva = new Canvas();
 
         public Body1(Context context) {
             super(context);
@@ -37,6 +38,7 @@ public class Body1 extends View {
 
         public void reset(){
             mirror = new Mirror();
+            invalidate();
             path.rewind();
         }
         @Override
@@ -64,5 +66,5 @@ public class Body1 extends View {
             canvas.drawPath(path, brush);
         }
 
-        
+
     }

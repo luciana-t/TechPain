@@ -8,13 +8,6 @@ import android.util.Log;
 
 public final class BDSingleton{
 
-    /*
-    Utilizando um objeto Singleton:
-        Cursos c = BDSingleton.getInstance().find("tipo", new String[]{"idTipo", "nome}, "", "");
-        BDSingleton.getInstance().delete("pokemonusuario", "");
-
-    */
-
 
     protected SQLiteDatabase db;
     private final String DB_NAME = "DBTP";

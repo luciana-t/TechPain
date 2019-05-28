@@ -11,6 +11,7 @@ public class Mirror {
 
     int idMirror;
     Date dtCriacao;
+    Double ampere;
     //List<Pair<Double, Double>> brush;
     private ArrayList<CustomPath.PathAction> actions = new ArrayList<CustomPath.PathAction>();
 

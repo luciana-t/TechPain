@@ -9,14 +9,6 @@ import android.view.View;
 import android.widget.EditText;
 
 public class Cadastro extends AppCompatActivity {
-    /*
-        Utilizando um objeto Singleton:
-            Cursos c = BDSingleton.getInstance().find("tipo", new String[]{"idTipo", "nome}, "", "");
-            BDSingleton.getInstance().delete("pokemonusuario", "");
-
-
-                age.getText().toString()
-        */
 
     EditText nome, cpf, gender, dtnascimento, tel, med;
     @Override
@@ -31,11 +23,6 @@ public class Cadastro extends AppCompatActivity {
         tel = (EditText) findViewById(R.id.edt_telefone);
         med = (EditText) findViewById(R.id.edt_med);
     }
-            /*
-            ContentValues valores = new ContentValues();
-            valores.put("nome", "Bill)
-            valores.put(tel ", "9999 9999");
-            db.update(“Autor”, valores, "nome = Deitel ’ ", null );*/
 
     public void clickCad(View view){
         ContentValues values = new ContentValues();
