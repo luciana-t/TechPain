@@ -12,6 +12,7 @@
     <string name="title_activity_perfil_adicao">PerfilAdicao</string>
     <string name="txtconfirma">Antes de enviar as informações para o aparelho,\ninforme quantos amperes:</string>
     <string name="a">A</string>
+    <string name="splash">Splash</string>
     <string name="btnconfirma">Confirmar</string>
 
 </resources>

@@ -55,13 +55,13 @@ class DataBase implements BaseColumns {
 
 // Create a new map of values, where column names are the keys
             ContentValues values = new ContentValues();
-            values.put(COLUMN_NAME_IDPONTOS, );
-            values.put(COLUMN_NAME_IDMAPA, );
-            values.put(COLUMN_NAME_LADO, );
-            values.put(COLUMN_NAME_PATH, );
+//            values.put(COLUMN_NAME_IDPONTOS, );
+//            values.put(COLUMN_NAME_IDMAPA, );
+//            values.put(COLUMN_NAME_LADO, );
+//            values.put(COLUMN_NAME_PATH, );
 
 // Insert the new row, returning the primary key value of the new row
-            long newRowId = db.insert(TABLE_NAME, null, values);
+            long newRowId = db.insert(TABLE_NAME_PONTOS, null, values);
 
         }
 
