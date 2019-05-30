@@ -22,26 +22,49 @@ public class CustomPath extends Path implements Serializable {
 
     @Override
     public void moveTo(float x, float y) {
-        mirror.getActions().add(new ActionMove(x, y));
-        Log.i("CUSTOMPATH", "MOVE TO. X: " + x + " Y: " +y);
-        super.moveTo(x, y);
+        if(DataBase.getInstance().lado == 1){
+            mirror.getActions_frente().add(new ActionMove(x, y));
+            Log.i("CUSTOMPATH", "MOVE TO. X: " + x + " Y: " +y);
+            super.moveTo(x, y);
+        } else {
+            mirror.getActions_tras().add(new ActionMove(x, y));
+            Log.i("CUSTOMPATH", "MOVE TO. X: " + x + " Y: " +y);
+            super.moveTo(x, y);
+        }
     }
 
     @Override
     public void lineTo(float x, float y) {
-        mirror.getActions().add(new ActionLine(x, y));
-        Log.i("CUSTOMPATH", "LINE TO. X: " + x + " Y: " +y);
-        super.lineTo(x, y);
+        if(DataBase.getInstance().lado == 1){
+            mirror.getActions_frente().add(new ActionMove(x, y));
+            Log.i("CUSTOMPATH", "MOVE TO. X: " + x + " Y: " +y);
+            super.lineTo(x, y);
+        } else {
+            mirror.getActions_tras().add(new ActionMove(x, y));
+            Log.i("CUSTOMPATH", "MOVE TO. X: " + x + " Y: " +y);
+            super.lineTo(x, y);
+        }
     }
 
     private void drawThisPath() {
-        for (PathAction p : mirror.getActions()) {
-            if (p.getType().equals(PathAction.PathActionType.MOVE_TO)) {
-                super.moveTo(p.getX(), p.getY());
-            } else if (p.getType().equals(PathAction.PathActionType.LINE_TO)) {
-                super.lineTo(p.getX(), p.getY());
+        if(DataBase.getInstance().lado == 1) {
+            for (PathAction p : mirror.getActions_frente()) {
+                if (p.getType().equals(PathAction.PathActionType.MOVE_TO)) {
+                    super.moveTo(p.getX(), p.getY());
+                } else if (p.getType().equals(PathAction.PathActionType.LINE_TO)) {
+                    super.lineTo(p.getX(), p.getY());
+                }
+            }
+        } else{
+            for (PathAction p : mirror.getActions_tras()) {
+                if (p.getType().equals(PathAction.PathActionType.MOVE_TO)) {
+                    super.moveTo(p.getX(), p.getY());
+                } else if (p.getType().equals(PathAction.PathActionType.LINE_TO)) {
+                    super.lineTo(p.getX(), p.getY());
+                }
             }
         }
+
     }
 
     public interface PathAction {

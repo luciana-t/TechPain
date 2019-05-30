@@ -13,7 +13,8 @@ public class Mirror {
     Date dtCriacao;
     Double ampere;
     //List<Pair<Double, Double>> brush;
-    private ArrayList<CustomPath.PathAction> actions = new ArrayList<CustomPath.PathAction>();
+    private ArrayList<CustomPath.PathAction> actions_frente = new ArrayList<CustomPath.PathAction>();
+    private ArrayList<CustomPath.PathAction> actions_tras = new ArrayList<CustomPath.PathAction>();
 
     public Mirror() {
         //brush = new ArrayList<Pair<Double, Double>>();
@@ -28,12 +29,20 @@ public class Mirror {
         this.idMirror = idMirror;
     }
 
-    public ArrayList<CustomPath.PathAction> getActions() {
-        return actions;
+    public ArrayList<CustomPath.PathAction> getActions_frente() {
+        return actions_frente;
     }
 
-    public void setActions(ArrayList<CustomPath.PathAction> actions) {
-        this.actions = actions;
+    public void setActions_frente(ArrayList<CustomPath.PathAction> actions_frente) {
+        this.actions_frente = actions_frente;
+    }
+
+    public ArrayList<CustomPath.PathAction> getActions_tras() {
+        return actions_tras;
+    }
+
+    public void setActions_tras(ArrayList<CustomPath.PathAction> actions_tras) {
+        this.actions_tras = actions_tras;
     }
 
     public Date getDtCriacao() {
