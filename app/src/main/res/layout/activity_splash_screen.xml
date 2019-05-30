@@ -11,6 +11,6 @@
         android:layout_alignParentTop="true"
         android:contentDescription="@string/splash"
         android:src="@drawable/tplogo"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/colorPrimaryDark"/>
 
 </RelativeLayout>

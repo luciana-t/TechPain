@@ -18,7 +18,8 @@
         <activity android:name=".Cadastro" />
         <!-- <activity android:name="com.luciana.techpain.Body1" /> NO XML REFERENCE -->
         <activity android:name=".BodyImage" />
-        <activity android:name=".PerfilAdicao" />
+        <activity android:name=".PerfilAdicao"
+            android:label="Paciente"/>
         <activity android:name=".Ampere" />
         <activity
             android:name=".SplashScreen"
