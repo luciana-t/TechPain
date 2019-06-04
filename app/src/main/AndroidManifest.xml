@@ -13,22 +13,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".Cadastro" />
         <!-- <activity android:name="com.luciana.techpain.Body1" /> NO XML REFERENCE -->
         <activity android:name=".BodyImage" />
-        <activity android:name=".PerfilAdicao"
-            android:label="Paciente"/>
+        <activity
+            android:name=".PerfilAdicao"
+            android:label="Paciente" />
         <activity android:name=".Ampere" />
         <activity
             android:name=".SplashScreen"
             android:label="TechPain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Intensity"
+            android:label="@string/title_activity_intensity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
