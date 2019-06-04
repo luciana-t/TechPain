@@ -19,7 +19,7 @@ public class BodyImage extends AppCompatActivity {
     Button btn_voltar;
     Body1 body_frente, body_tras;   //lado 1 = frente --------- lado 2 = tras
     ConstraintLayout layout;
-    Intent it = getIntent(); //progresso passado 
+    Intent it = getIntent(); //progresso passado
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

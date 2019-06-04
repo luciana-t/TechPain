@@ -38,6 +38,20 @@
             android:layout_height="wrap_content"
             style="@style/Widget.AppCompat.SeekBar.Discrete"
             android:max="10"/>
+       <!-- <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
+            android:background="@color/grey">
+            <TextView
+                android:id="@+id/dor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/a"
+                android:layout_centerInParent="true"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>-->
 
     </LinearLayout>
 

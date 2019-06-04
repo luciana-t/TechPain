@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Intensity extends AppCompatActivity {
@@ -17,6 +18,7 @@ public class Intensity extends AppCompatActivity {
     SeekBar SB;
     ImageView iv;
     Intent it;
+    TextView dor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,7 @@ public class Intensity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 Toast.makeText(getApplicationContext(), "Dor: " + progress, Toast.LENGTH_LONG).show();
+                //dor.setText("Intensidade da dor: " + progress);
                 if(progress == 0) iv.setImageResource(R.drawable.face1);
                 else if(progress == 1) iv.setImageResource(R.drawable.faces12);
                 else if(progress == 2) iv.setImageResource(R.drawable.face2);
