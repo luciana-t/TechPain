@@ -30,7 +30,8 @@ public class BodyImage extends AppCompatActivity {
         setContentView(R.layout.activity_body_image);
         layout = (ConstraintLayout)findViewById(R.id.container);
 
-        if(DataBase.getInstance().lado == 1){
+       // if(DataBase.getInstance().lado == 1){
+        if(true){
             Log.i("BODYIMAGE", "onCreate lado 1 frente");
             layout.addView(body_frente);
         }
@@ -49,14 +50,15 @@ public class BodyImage extends AppCompatActivity {
     }
 
     public void onClickLado(View view){
-        if (DataBase.getInstance().lado == 1) {
-            DataBase.getInstance().lado = 2;
+       // if (DataBase.getInstance().lado == 1) {
+            if(true){
+          //  DataBase.getInstance().lado = 2;
             layout.removeView(body_frente);
             layout.addView(body_tras);
             Log.i("BODYIMAGE", "onClickLado 10");
         }
         else{
-            DataBase.getInstance().lado = 1;
+         //   DataBase.getInstance().lado = 1;
             layout.removeView(body_tras);
             layout.addView(body_frente);
             Log.i("BODYIMAGE", "onClickLado = 0");
@@ -70,7 +72,8 @@ public class BodyImage extends AppCompatActivity {
     }
 
     public void onClickBtnDesfaz(View view){
-        if(DataBase.getInstance().lado == 1) {
+//        if(DataBase.getInstance().lado == 1) {
+        if(true){
             body_frente.reset();
         }
         else {
