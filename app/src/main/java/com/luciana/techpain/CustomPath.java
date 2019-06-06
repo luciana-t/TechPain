@@ -22,7 +22,8 @@ public class CustomPath extends Path implements Serializable {
 
     @Override
     public void moveTo(float x, float y) {
-        if(DataBase.getInstance().lado == 1){
+    //    if(DataBase.getInstance().lado == 1){
+        if(true){
             mirror.getActions_frente().add(new ActionMove(x, y));
             Log.i("CUSTOMPATH", "MOVE TO. X: " + x + " Y: " +y);
             super.moveTo(x, y);
@@ -35,7 +36,8 @@ public class CustomPath extends Path implements Serializable {
 
     @Override
     public void lineTo(float x, float y) {
-        if(DataBase.getInstance().lado == 1){
+        //if(DataBase.getInstance().lado == 1){
+            if (true){
             mirror.getActions_frente().add(new ActionMove(x, y));
             Log.i("CUSTOMPATH", "MOVE TO. X: " + x + " Y: " +y);
             super.lineTo(x, y);
@@ -47,7 +49,8 @@ public class CustomPath extends Path implements Serializable {
     }
 
     private void drawThisPath() {
-        if(DataBase.getInstance().lado == 1) {
+     //   if(DataBase.getInstance().lado == 1) {
+            if(true) {
             for (PathAction p : mirror.getActions_frente()) {
                 if (p.getType().equals(PathAction.PathActionType.MOVE_TO)) {
                     super.moveTo(p.getX(), p.getY());

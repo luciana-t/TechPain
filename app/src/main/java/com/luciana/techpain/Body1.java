@@ -32,7 +32,8 @@ public class Body1 extends View {
         brush.setStrokeJoin(Paint.Join.ROUND);
         brush.setStrokeWidth(8f);
         mirror = new Mirror();
-        gender = DataBase.getInstance().paciente.gender; //mulher = 1, homem = 2 //lado 1 = frente --- lado 2 = tras
+       // gender = DataBase.getInstance().paciente.gender; //mulher = 1, homem = 2 //lado 1 = frente --- lado 2 = tras
+        gender = 1;
         imagemGS = gender + lado;
         btn_lado = (Button) findViewById(R.id.btn_lado);
 
@@ -40,7 +41,7 @@ public class Body1 extends View {
         if (lado == 1 && gender == 1){ //lado 1 = frente // gender 1 = mulher
             setBackground(ContextCompat.getDrawable(context, R.drawable.female));
             Log.i("BODY1", "switch mulher frente");
-        } else if (lado == 2 && gender == 1){ // lado 1 = frente // gender 1 = mulher
+        } else if (lado == 2 && gender == 1){ // lado 1 = tras // gender 1 = mulher
             setBackground(ContextCompat.getDrawable(context, R.drawable.maleback));
             Log.i("BODY1", "switch mulher tras");
         } else if (lado == 1 && gender == 2){ // lado 1 = frente // gender 2 = homem

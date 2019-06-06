@@ -61,7 +61,7 @@ public class PerfilAdicao extends AppCompatActivity{
     }
 
     public void onClickFloating(View view){
-        Intent it = new Intent(getBaseContext(), BodyImage.class);
+        Intent it = new Intent(getBaseContext(), Intensity.class);
         startActivity(it);
     }
 }

@@ -7,115 +7,120 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 import android.util.Log;
 
-class DataBase implements BaseColumns {
-    private static final DataBase ourInstance = new DataBase();
-    Context ctx = MyApp.getAppContext();
-    public int lado = 1;
-    DataBaseHelper dbHelper = new DataBaseHelper(ctx);
+public final class DataBase{
     Paciente paciente = new Paciente();
+//    private static final DataBase ourInstance = new DataBase();
+//
+//    public int lado = 1;
 
-    static DataBase getInstance() {
-        return ourInstance;
-    }
+//    static DataBase getInstance() {
+//        return ourInstance;
+//    }
 
-    private DataBase() {
-//        SQLiteDatabase db = dbHelper.getWritableDatabase();
+    //Intancia da subclasse SQLiteOpenHelper
+    Context ctx = MyApp.getAppContext();
+    DataBaseHelper dbHelper = new DataBaseHelper(ctx);
 
-  //      dbHelper.onCreate(db);
-
+    private DataBase(){
+        //SQLiteDatabase db = dbHelper.getWritableDatabase();
+        //dbHelper.onCreate(db);
         paciente.setGender(1);
     }
 
-    public static final String TABLE_NAME_PACIENTE = "paciente";
-    public static final String TABLE_NAME_MAPA = "mapa";
-    public static final String TABLE_NAME_PONTOS = "pontos";
-/*
-    public static final String COLUMN_NAME_CPF = "cpf";
-    public static final String COLUMN_NAME_NOME = "nome";
-    public static final String COLUMN_NAME_GENERO = "genero";
-    public static final String COLUMN_NAME_CPF = "cpf";
-    public static final String COLUMN_NAME_CPF = "cpf";
-    public static final String COLUMN_NAME_CPF = "cpf";
-    public static final String COLUMN_NAME_CPF = "cpf";
-    public static final String COLUMN_NAME_CPF = "cpf";
+    public static class DataBaseEntry implements BaseColumns{
+
+        public static final String TABLE_NAME_PACIENTE = "paciente";
+        public static final String TABLE_NAME_MAPA = "mapa";
+        public static final String TABLE_NAME_PONTOS = "pontos";
+
+        public static final String COLUMN_NAME_CPF = "cpf";
+        public static final String COLUMN_NAME_NOME = "nome";
+        public static final String COLUMN_NAME_GENERO = "genero";
+        public static final String COLUMN_NAME_DTNASCIMENTO = "dtNascimento";
+        public static final String COLUMN_NAME_TELEFONE = "telefone";
+        public static final String COLUMN_NAME_DTCRIADO = "dtCriado";
+        public static final String COLUMN_NAME_MEDICO = "medico";
+        public static final String COLUMN_NAME_IDPACIENTE = "idPaciente";
+
+        public static final String COLUMN_NAME_IDMAPA = "idMapa";
+        public static final String COLUMN_NAME_IDPACIENTE_FOREIGN = "idpaciente";
+        public static final String COLUMN_NAME_DTADICIONADO = "dtAdicionado";
+        public static final String COLUMN_NAME_AMPERE = "ampere";
+        public static final String COLUMN_NAME_LADO = "lado";
+        public static final String COLUMN_NAME_INTENSIDADE = "intensidade";
+
+
+        public static final String COLUMN_NAME_IDPONTOS = "idPontos";
+        public static final String COLUMN_NAME_IDMAPA_FOREIGN = "idMapa";
+        public static final String COLUMN_NAME_CORDX = "x";
+        public static final String COLUMN_NAME_CORDY = "y";
+
+    }
+    private static final String SQL_CREATE_ENTRIES_PACIENTE =
+            "CREATE TABLE " + DataBaseEntry.TABLE_NAME_PACIENTE + " (" +
+                DataBaseEntry._ID + " INTEGER PRIMARY KEY, " +
+                DataBaseEntry.COLUMN_NAME_CPF + " INTEGER, " +
+                DataBaseEntry.COLUMN_NAME_NOME + " TEXT, " +
+                DataBaseEntry.COLUMN_NAME_GENERO + "TEXT, " +
+                DataBaseEntry.COLUMN_NAME_DTNASCIMENTO + "NUMERIC, " +
+                DataBaseEntry.COLUMN_NAME_TELEFONE + "INTEGER, " +
+                DataBaseEntry.COLUMN_NAME_DTCRIADO + "NUMERIC, " +
+                DataBaseEntry.COLUMN_NAME_MEDICO + "TEXT, " +
+                DataBaseEntry.COLUMN_NAME_IDPACIENTE + "INTEGER)";
+
+    private static final String SQL_CREATE_ENTRIES_MAPA =
+            "CREATE TABLE " + DataBaseEntry.TABLE_NAME_MAPA + " (" +
+                DataBaseEntry._ID + "INTEGER PRIMARY KEY," +
+                DataBaseEntry.COLUMN_NAME_IDPACIENTE_FOREIGN + "INTEGER, " +
+                DataBaseEntry.COLUMN_NAME_DTADICIONADO + "NUMERIC, " +
+                DataBaseEntry.COLUMN_NAME_AMPERE + "NUMERIC, " +
+                DataBaseEntry.COLUMN_NAME_LADO + "TEXT, " +
+                DataBaseEntry.COLUMN_NAME_INTENSIDADE + "INTEGER)";
+
+    private static final String SQL_CREATE_ENTRIES_PONTOS =
+            "CREATE TABLE " + DataBaseEntry.TABLE_NAME_PONTOS + " (" +
+                DataBaseEntry._ID + "INTEGER PRIMARY KEY, " +
+                DataBaseEntry.COLUMN_NAME_IDMAPA_FOREIGN + "INTEGER, " +
+                DataBaseEntry.COLUMN_NAME_IDPONTOS + "INTEGER, " +
+                    DataBaseEntry.COLUMN_NAME_CORDX + "NUMERIC, " +
+                    DataBaseEntry.COLUMN_NAME_CORDY + "NUMERIC)";
+
+    private static final String SQL_DELETE_ENTRIES_PACIENTE =
+            "DROP TABLE IF EXISTS " + DataBaseEntry.TABLE_NAME_PACIENTE;
+
+    private static final String SQL_DELETE_ENTRIES_MAPA =
+            "DROP TABLE IF EXISTS " + DataBaseEntry.TABLE_NAME_MAPA;
+
+    private static final String SQL_DELETE_ENTRIES_PONTOS =
+            "DROP TABLE IF EXISTS " + DataBaseEntry.TABLE_NAME_PONTOS;
 
 
 
-
-    public static final String COLUMN_NAME_IDPONTOS = "idPontos";
-    public static final String COLUMN_NAME_IDMAPA = "idMapa";
-    public static final String COLUMN_NAME_LADO = "lado";
-    public static final String COLUMN_NAME_PATH = "path";
-    public static final String COLUMN_NAME_DTADICIONADO = "dtAdicionado";
-
-
-    private static final String SQL_CREATE_ENTRIES =
-            "CREATE TABLE " + TABLE_NAME_PONTOS + " (" +
-                    _ID + " INTEGER PRIMARY KEY," +
-                    COLUMN_NAME_IDPONTOS + " INTEGER," +
-                    COLUMN_NAME_IDMAPA + " INTEGER," +
-                    COLUMN_NAME_LADO + "TEXT," +
-                    COLUMN_NAME_PATH + "NUMERIC," +
-                    COLUMN_NAME_DTADICIONADO + "INTEGER)";
-
-    private static final String SQL_DELETE_ENTRIES =
-            "DROP TABLE IF EXISTS " + TABLE_NAME_PONTOS;
-*/
-   String x = "CREATE TABLE Paciente (" +
-        "            CPF INTEGER NOT NULL UNIQUE," +
-        " `Nome` TEXT NOT NULL," +
-        "            Genero TEXT NOT NULL," +
-        "            DtNascimento NUMERIC NOT NULL," +
-        "            Telefone INTEGER," +
-        "            DtCriado INTEGER NOT NULL," +
-        "            Medico TEXT NOT NULL," +
-        "            IDPaciente INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE" +
-        ");";
-
-    public class DataBaseHelper extends SQLiteOpenHelper {
+    public static class DataBaseHelper extends SQLiteOpenHelper {
         // If you change the database schema, you must increment the database version.
         public static final int DATABASE_VERSION = 1;
         public static final String DATABASE_NAME = "DataBase.db";
+
         public DataBaseHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
-
         }
-
-        public void insert(){
-            /*// Gets the data repository in write mode
-            SQLiteDatabase db = dbHelper.getWritableDatabase();
-
-            // Create a new map of values, where column names are the keys
-            ContentValues values = new ContentValues();
-            if (lado == 1){
-                values.put(COLUMN_NAME_LADO, "frente");
-            } else {
-                values.put(COLUMN_NAME_LADO, "verso");
-            }
-
-            values.put(COLUMN_NAME_DTADICIONADO,);
-            values.put(COLUMN_NAME_PATH, );
-
-            // Insert the new row, returning the primary key value of the new row
-            // retorna -1 se houver erro
-            long newRowId = db.insert(TABLE_NAME_PONTOS, null, values);
-*/
-        }
-
         public void onCreate(SQLiteDatabase db) {
-            db.execSQL(x);
-            Log.i("DATABASE","onCreate");
+            db.execSQL(SQL_CREATE_ENTRIES_PACIENTE);
+            db.execSQL(SQL_CREATE_ENTRIES_PONTOS);
+            db.execSQL(SQL_CREATE_ENTRIES_MAPA);
         }
-
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             // This database is only a cache for online data, so its upgrade policy is
             // to simply to discard the data and start over
-            //db.execSQL(SQL_DELETE_ENTRIES);
+            db.execSQL(SQL_DELETE_ENTRIES_PACIENTE);
+            db.execSQL(SQL_DELETE_ENTRIES_MAPA);
+            db.execSQL(SQL_DELETE_ENTRIES_PONTOS);
             onCreate(db);
         }
-
         public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             onUpgrade(db, oldVersion, newVersion);
         }
+
     }
+
 }

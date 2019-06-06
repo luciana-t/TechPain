@@ -14,5 +14,6 @@
     <string name="a">A</string>
     <string name="splash">Splash</string>
     <string name="btnconfirma">Confirmar</string>
+    <string name="title_activity_intensity">Intensity</string>
 
 </resources>
